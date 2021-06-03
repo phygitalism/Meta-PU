@@ -16,7 +16,6 @@ _ext_src_root = "pointnet2/_ext-src/"
 _ext_sources = glob.glob("{}/src/*.cpp".format(_ext_src_root)) + glob.glob(
     "{}/src/*.cu".format(_ext_src_root)
 )
-_ext_headers = glob.glob("{}/include/*".format(_ext_src_root))
 
 requirements = ["etw_pytorch_utils", "h5py", "enum34", "future"]
 
@@ -39,5 +38,5 @@ setup(
     cmdclass={"build_ext": BuildExtension},
 )
 
-_ext_name = glob.glob("pointnet2/*.so")
-shutil.copy(_ext_name[0], '.')
+# _ext_name = glob.glob("pointnet2/*.so")
+# shutil.copy(_ext_name[0], '.')
