@@ -1,4 +1,4 @@
-git+https://github.com/peter0749/etw_pytorch_utils.git
+git+https://github.com/peter0749/etw_pytorch_utils.git@008950bef2837afe6ed457f77c077be0c20a8484
 h5py~=3.2
 numpy~=1.20
 enum34~=1.1
