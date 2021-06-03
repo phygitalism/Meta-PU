@@ -1,10 +1,10 @@
-git+git://github.com/erikwijmans/etw_pytorch_utils.git@v1.1.1#egg=etw_pytorch_utils
-h5py
-numpy
-torch>=1.0
-torchvision
-pprint
-enum34
-future
-pykeops
-geomloss
+git+https://github.com/peter0749/etw_pytorch_utils.git
+h5py~=3.2
+numpy~=1.20
+enum34~=1.1
+future~=0.18
+pykeops~=1.5
+geomloss~=0.2
+-f https://download.pytorch.org/whl/torch_stable.html
+torch==1.8.1+cu101
+torchvision==0.9.1
