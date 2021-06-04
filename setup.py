@@ -2,15 +2,6 @@ from __future__ import division, absolute_import, with_statement, print_function
 from setuptools import setup, find_packages
 from torch.utils.cpp_extension import BuildExtension, CUDAExtension
 import glob
-import shutil
-
-try:
-    import builtins
-except:
-    import __builtin__ as builtins
-
-builtins.__POINTNET2_SETUP__ = True
-import pointnet2
 
 _ext_src_root = "pointnet2/_ext-src/"
 _ext_sources = glob.glob("{}/src/*.cpp".format(_ext_src_root)) + glob.glob(
@@ -21,22 +12,21 @@ requirements = ["etw_pytorch_utils", "h5py", "enum34", "future"]
 
 setup(
     name="pointnet2",
-    version=pointnet2.__version__,
+    version="2.2.2",
     author="Erik Wijmans",
     packages=find_packages(),
     install_requires=requirements,
     ext_modules=[
         CUDAExtension(
-            name="pointnet2",
+            name="pointnet2._ext",
             sources=_ext_sources,
             extra_compile_args={
-                "cxx": ["-O2", "-I{}".format("{}/include".format(_ext_src_root))],
-                "nvcc": ["-O2", "-I{}".format("{}/include".format(_ext_src_root))],
+                "cxx": ["-O2"],
+                "nvcc": ["-O2"],
             },
+            include_dirs=["{}/include".format(_ext_src_root)],
         )
     ],
     cmdclass={"build_ext": BuildExtension},
+    include_package_data=True,
 )
-
-# _ext_name = glob.glob("pointnet2/*.so")
-# shutil.copy(_ext_name[0], '.')
