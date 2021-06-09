@@ -6,6 +6,8 @@ future~=0.18
 pykeops~=1.5
 geomloss~=0.2
 warmup-scheduler~=0.3
+scikit-learn~=0.24
+tensorboard~=2.4
 -f https://download.pytorch.org/whl/cu100/torch_stable.html
 torch==1.1.0
 torchvision==0.3.0
