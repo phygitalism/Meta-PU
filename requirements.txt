@@ -8,6 +8,5 @@ geomloss~=0.2
 warmup-scheduler~=0.3
 scikit-learn~=0.24
 tensorboard~=2.4
--f https://download.pytorch.org/whl/cu100/torch_stable.html
-torch==1.1.0
-torchvision==0.3.0
+torch==1.2.0 
+torchvision==0.4.0
